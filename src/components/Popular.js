@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import * from '../utils/api';
+import * as api  from '../utils/api';
 
 function SelectLang(props){
     const languages = ["All","Javascript", "Python", "Ruby", "Java"];
