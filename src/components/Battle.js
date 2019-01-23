@@ -89,15 +89,30 @@ export default class Battle extends Component {
 
         )
     }
+    handleReset(){
+        this.setState(()=>{
+            const newstate={};
+
+            newstate[id+"Name"]="";
+            newstate[id+"Image"]=null;
+            return newstate;
+        }
+
+    }
 
 
     render(){
 
         const playerOneName =this.state.playerOneName;
         const playerTwoName =this.state.playerTwoName;
+        const playerOneImage=this.state.playerOneImage;
+        const playerTwoImage=this.state.playerTwoImage;
         return(
             <div className="row">
                 {!playerOneName && <PlayerInput id="playerOne" label="Player One" onSubmit={this.handleSubmit}></PlayerInput>}
+
+                {playerOneImage?<PlayerPreview avatar={playerOneImage} username={playerOneName} onReset={this.handleReset} id="playerOne"></PlayerPreview>:null}
+                {playerTwoImage?<PlayerPreview avatar={playerTwoImage} username={playerTwoName} onReset={this.handleReset} id="playerTwo"></PlayerPreview>:null}
                 {!playerTwoName && <PlayerInput id="playerTwo" label="Player Two" onSubmit={this.handleSubmit}></PlayerInput>}
             </div>
         )
