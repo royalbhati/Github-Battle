@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 export default function Nav(props){
     return(
+        <div className="container mt-5">
         <ul className='nav'>
         <li>
             <NavLink exact activeClassName='active'  to={"/"}>Home</NavLink>
@@ -18,5 +19,6 @@ export default function Nav(props){
 
         </li>
         </ul>
+        </div>
     )
 }
